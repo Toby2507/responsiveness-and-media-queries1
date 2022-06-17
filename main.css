@@ -1,0 +1,205 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* ROOT */
+:root {
+    --clr-red: rgb(255, 122, 122);
+    --clr-green: hsl(154, 59%, 51%);
+    --clr-blue: hsl(248, 32%, 49%);
+    --clr-darkBlue: hsl(249, 10%, 26%);
+    --clr-grayishBlue: hsl(246, 25%, 77%);
+
+    --ff-primary: "Poppins", sans-serif;
+}
+/*
+============================================
+RESET
+============================================
+*/
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+strong {
+    font-weight: 700;
+}
+input:focus {
+    outline: none;
+}
+/* Custom styles and utilities */
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    font: 400 1rem/1.5 var(--ff-primary);
+    color: #fff;
+    background: linear-gradient(rgba(255, 122, 122, .7) 70%, rgba(255, 122, 122, .7)),
+    url("./images/bg-intro-mobile.png") center/cover no-repeat;
+}
+.container {
+    display: grid;
+    align-items: center;
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+}
+.hero h1 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.hero p {
+    font-size: .85rem;
+    color: rgb(243, 243, 243);
+    text-align: center;
+}
+.info {
+    max-width: 100%;
+    padding: .6rem 3.5rem;
+    background-color: var(--clr-blue);
+    border-radius: 10px;
+    font-size: .85rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.input {
+    position: relative;
+}
+.input img {
+    position: absolute;
+    visibility: hidden;
+    top: .8rem;
+    right: .6rem;
+}
+.inputs {
+    width: 100%;
+    padding: .7rem;
+    font-size: 1rem;
+    display: block;
+    border: 2px solid var(--clr-grayishBlue);
+    border-radius: 5px;
+    color: var(--clr-darkBlue);
+    font-weight: 600;
+}
+.inputs + .error-message {
+    text-align: right;
+    font-size: .85rem;
+    color: var(--clr-red);
+    display: none;
+}
+.inputs::placeholder {
+    color: var(--clr-darkBlue);
+    font-weight: 600;
+}
+.input.error .inputs {
+    border-color: var(--clr-red);
+}
+.input.error .inputs::placeholder {
+    visibility: hidden;
+}
+.input.error img {
+    visibility: visible;
+}
+.input.error .error-message {
+    display: block;
+}
+.submit-btn {
+    max-width: 100%;
+    padding: .8rem 1.4rem;
+    background-color: var(--clr-green);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.submit-btn:hover {
+    opacity: .8;
+}
+.form p {
+    font-size: .80rem;
+    width: 95%;
+    margin-inline: auto;
+    color: var(--clr-grayishBlue);
+    text-align: center;
+}
+.terms {
+    color: var(--clr-red);
+    font-size: .85rem;
+    font-weight: 600;
+}
+@media all and (min-width: 412px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+    .hero h1 {
+        text-align: left;
+        font-size: 2.5rem;
+    }
+    body {
+        background: linear-gradient(rgba(255, 122, 122, .7), rgba(255, 122, 122, .7)),
+                url("./images/bg-intro-desktop.png") center/cover no-repeat;
+    }
+    .hero {
+        width: 80%;
+        margin-inline: auto;
+    }
+    .hero p {
+        text-align: left;
+    }
+}
